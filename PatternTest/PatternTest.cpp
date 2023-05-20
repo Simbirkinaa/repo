@@ -4,7 +4,7 @@
 #include "..\Pattern\Pattern.cpp"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace UnitTest1
+namespace PatternTest
 {
 	TEST_CLASS(Test_for_struct_Number)
 	{
