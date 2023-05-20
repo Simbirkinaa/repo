@@ -11,20 +11,7 @@ struct FunctionCall;
 struct Variable;
 
 struct Expression //базовая абстрактная структура
-{
-	virtual ~Expression() { } //виртуальный деструктор
-	virtual double evaluate() const = 0; //абстрактный метод «вычислить»
-	virtual Expression* transform(Transformer* tr) const = 0;
-	virtual std::string print() const = 0;//абстрактный метод печать
-};
-
-struct Transformer //pattern Visitor
-{
-	virtual ~Transformer() {}
-	virtual Expression* transformNumber(Number const*) = 0;
-	virtual Expression* transformBinaryOperation(BinaryOperation const*) = 0;
-	virtual Expression* transformFunctionCall(FunctionCall const*) = 0;
-	virtual Expression* transformVariable(Variable const*) = 0;
+virtual Expression* transformVariable(Variable const*) = 0;
 };
 
 struct Number : Expression // стуктура «Число»
